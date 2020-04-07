@@ -50,9 +50,11 @@ Searches for the given string
 * `options`
     * object with options
     * possible settings:
-    * safeSearch[Boolean] -> pull items in youtube restriction mode. 
+    * safeSearch[Boolean] -> pull items in youtube restriction mode.
     * limit[integer] -> limits the pulled items
-	* nextpageRef[String] -> if u wanna continue a previous search or use filters
+    * nextpageRef[String] -> if u wanna continue a previous search or use filters
+    * gl[String] -> regional parameters to pass to the request
+    * hl[String] -> same as gl
 * `callback(err, result)`
     * function
     * getting fired after the request is done
@@ -61,13 +63,16 @@ Searches for the given string
 * returns a Promise when no callback is defined
 * [Example response](https://github.com/timeforaninja/node-ytsr/blob/master/example/example_search_output)
 
-### ytsr.getFilters(searchString, [callback])
+### ytsr.getFilters(searchString, [options, callback])
 
 Pulls avaible filters for the given string/ref
 
 * `searchString`
     * string to search for
     * or previously optained filter ref
+* `options`
+    * gl[String] -> regional parameters to pass to the request
+    * hl[String] -> same as gl
 * `callback(err, result)`
     * function
     * getting fired after the request is done
